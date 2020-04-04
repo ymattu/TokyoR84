@@ -106,7 +106,7 @@ options(dplyr.print_max = 1e9)
 
 ## R のパッケージ {#packages}
 - R のパッケージを使うことで、世界中で開発されている便利な手法を使える
-- パッケージに含まれている関数を呼び出すことで、様々な拡張昨日を使う
+- パッケージに含まれている関数を呼び出すことで、様々な拡張機能を使う
 - パッケージは、関数の集まり
 - CRANに登録されているものは、`install.packages("パッケージ名")` でインストール
     - 例: `install.packages("ggplot2")`
@@ -613,12 +613,12 @@ select(product, matches("^(Product|Price)")) # "Product"または"Price"で始�
 - 税込み価格を計算
 ```{r, eval=FALSE}
 product %>%
-  mutate(zeikomi = Price * 1.08) %>%
+  mutate(zeikomi = Price * 1.1) %>%
   head(4)
 ```
 ```{r, echo=FALSE}
 product %>%
-  mutate(zeikomi = Price * 1.08) %>%
+  mutate(zeikomi = Price * 1.1) %>%
   head(4) %>%
   DT::datatable(extensions =  'FixedColumns',
   options = list(
